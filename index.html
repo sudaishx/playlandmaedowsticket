@@ -1,0 +1,272 @@
+c<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets-Playland Meadows</title>
+  <link rel="icon" type="image/png" href="icon.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Courier+Prime&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="left-section">
+      <img src="pm.png" alt="picture of logo" class="logo">
+    </div>
+    <div class="middle-section">
+      <h1>PLAYLAND MEADOWS</h1>
+    </div>
+    <div class="menu-icon">&#9776;</div>
+  </header>
+
+  <!-- Ticket Section -->
+  <section class="tickets">
+    <h2>Tickets</h2>
+    <p class="pricing">
+      Pricing is quoted in Ringgit Malaysia and inclusive of Service Tax and Entertainment Duty at prevailing rate where applicable.
+    </p>
+    <p class="note">
+      *Online tickets must be purchased one (01) day before visiting the park.*
+    </p>
+    <hr>
+
+    <div class="ticket-container">
+      
+      <!-- Admission Pass -->
+      <div class="ticket-box admission">
+        <h3>Admission Pass</h3>
+        <h4>RM 40.90</h4>
+        <p class="info">Applicable taxes are additional.<br>Refund protection available!</p>
+        <p class="small">*Regular refunds are subject to terms and conditions</p>
+        <!-- Buy Now label triggers modal -->
+        <label for="modal-toggle-admission" class="buy-btn admission-btn">Buy Now</label>
+
+        <div class="features">
+          <ul>
+            <li>✔ Admission to park</li>
+            <li>✔ Free Parking!</li>
+            <li>✘ Access to all rides</li>
+            <li>✔ Complimentary Snacks</li>
+            <li>✔ Free First ride</li>
+            <li>✘ Express Entry</li>
+            <li>✘ Unlimited ride time</li>
+            <li>✘ Shuttle Service</li>
+            <li>✘ Seasonal event pass</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Platinum Pass -->
+      <div class="ticket-box platinum">
+        <h3>Platinum Pass</h3>
+        <div class="highlight">Most Popular</div>
+        <h4>RM 49.90</h4>
+        <p class="info">Applicable taxes are additional.<br>Refund protection available!</p>
+        <p class="small">*Regular refunds are subject to terms and conditions</p>
+        <label for="modal-toggle-admission" class="buy-btn platinum-btn">Buy Now</label>
+        <div class="features">
+          <ul>
+            <li>✔ Admission to park</li>
+            <li>✔ Free Parking!</li>
+            <li>✔ Access to all rides</li>
+            <li>✔ Complimentary Snacks</li>
+            <li>✔ Free First ride</li>
+            <li>✘ Express Entry</li>
+            <li>✘ Unlimited ride time</li>
+            <li>✘ Shuttle Service</li>
+            <li>✘ Seasonal event pass</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Exclusive Pass -->
+      <div class="ticket-box exclusive">
+        <h3>Exclusive Pass</h3>
+        <h4>RM 59.90</h4>
+        <p class="info">Applicable taxes are additional.<br>Refund protection available!</p>
+        <p class="small">*Regular refunds are subject to terms and conditions</p>
+        <label for="modal-toggle-admission" class="buy-btn exclusive-btn">Buy Now</label>
+        <div class="features">
+          <ul>
+            <li>✔ Admission to park</li>
+            <li>✔ Free Parking!</li>
+            <li>✔ Access to all rides</li>
+            <li>✔ Complimentary Snacks</li>
+            <li>✔ Free First ride</li>
+            <li>✔ Express Entry</li>
+            <li>✔ Unlimited ride time</li>
+            <li>✔ Shuttle Service</li>
+            <li>✔ Seasonal event pass</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hidden checkbox modal trigger -->
+  <input type="checkbox" id="modal-toggle-admission" class="modal-toggle" style="display:none;">
+
+<!-- ORIGINAL Pass Purchase Modal -->
+<div class="modal">
+  <div class="modal-content">
+    <label for="modal-toggle-admission" class="close-modal">&times;</label>
+    <div class="buy-head">
+      <h3>Pass Purchase</h3>
+    </div>
+    <div class="pass-form-container">
+      <!-- Left: Personal Information -->
+      <div class="pass-left">
+        <h4>Fill Your Personal Information</h4>
+        <form>
+          <label>Full Name :</label>
+          <input type="text" placeholder="John Doe">
+
+          <div class="inline-row">
+            <div class="dob-group">
+              <label for="dob">Date of birth :</label>
+              <input id="dob" type="date" placeholder="DD/MM/YYYY" class="dob">
+            </div>
+            <div class="phone-group">
+              <label for="phone">Phone :</label>
+              <input id="phone" type="tel" placeholder="+60 12 345 6789">
+            </div>
+          </div>
+
+          <label>Email :</label><input type="email" placeholder="example@mail.com">
+          <label>Address :</label><input type="text" placeholder="123 Street Name">
+
+          <label>Select Payment Method</label>
+          <div class="payment-methods">
+            <label class="payment-option">
+              <input type="radio" name="payment" value="visa">
+              <img src="Visa_Logo.png" alt="Visa">
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="mastercard">
+              <img src="MasterCard_Logo.png" alt="Mastercard">
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="amex">
+              <img src="amex_logo.png" alt="Amex">
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Union Pay">
+              <img src="UnionPay_logo.png" alt="union pay">
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="jcb">
+              <img src="JCB_logo.png" alt="jcb">
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="discover">
+              <img src="Discover_Logo.jpg" alt="discover">
+            </label>
+          </div>
+
+          <label>Card Number :</label><input 
+  type="text" 
+  inputmode="numeric" 
+  pattern="\d{16}" 
+  maxlength="16" 
+  minlength="16" 
+  placeholder="Enter 16-digit card number" 
+  required
+>
+
+<div class="payment-row">
+  <div class="expiry-group">
+    <label>Expiry date :</label>
+    <input type="month" placeholder="july 1970" class="expiry">
+  </div>
+  <div class="cvc-group">
+    <label>cvc :</label>
+    <input type="text" placeholder="123" class="cvc" maxlength="3">
+  </div>
+</div>
+        </form>
+      </div>
+
+      <!-- Right: Welcome Image -->
+      <div class="pass-right">
+        <h4>Welcome To Playland Meadows!</h4>
+        <img src="dino.jpg" alt="Welcome Image">
+      </div>
+    </div>
+
+    <!-- Confirm Button -->
+    <label for="success-toggle" class="Confirm" style="margin-top:20px;">Confirm</label>
+  </div>
+</div>
+
+
+  <!-- NEW Success Modal -->
+  <input type="checkbox" id="success-toggle" class="modal-toggle" style="display:none;">
+  <div class="modal-success">
+    <div class="modal-success-content">
+      <label for="success-toggle" class="close-modal">&times;</label>
+      <div class="tick">&#10004;</div>
+      <h2>Payment Successful!</h2>
+    </div>
+  </div>
+
+  <!-- Best Time Section -->
+  <section class="best-time">
+    <h2>Best Time to Visit</h2>
+    <p>Enjoy fewer crowds and shorter wait times when you visit on weekdays!  
+    Morning hours (10AM–1PM) are perfect for families looking for cooler weather and open rides.</p>
+  </section>
+
+  <!-- Visitor Info + Reviews -->
+  <section class="extra-section">
+    <div class="info-link">
+      <a href="visitor-info.html">→ View Visitor Information</a>
+    </div>
+
+    <div class="reviews">
+      <h2>What Visitors Say</h2>
+      <blockquote>“The best family park I’ve ever visited! Great rides and amazing staff.” – Ong Zi Chong</blockquote>
+      <blockquote>“Loved the Platinum Pass! Totally worth it.” – Kemal</blockquote>
+      <blockquote>“Beautiful environment and amazing family experience!” – Muhammet</blockquote>
+    </div>
+
+    <section class="gallery">
+      <a href="#img1"><img src="img1.jpg" alt=""></a>
+      <a href="#img2"><img src="img2.jpg" alt=""></a>
+      <a href="#img3"><img src="img3.jpg" alt=""></a>
+      <a href="#img4"><img src="img4.jpg" alt=""></a>
+      <a href="#img5"><img src="img5.jpg" alt=""></a>
+      <a href="#img6"><img src="img6.jpg" alt=""></a>
+
+      <div class="lightbox" id="img1"><a href="#" class="close-btn">×</a><img src="img1.jpg" alt=""></div>
+      <div class="lightbox" id="img2"><a href="#" class="close-btn">×</a><img src="img2.jpg" alt=""></div>
+      <div class="lightbox" id="img3"><a href="#" class="close-btn">×</a><img src="img3.jpg" alt=""></div>
+      <div class="lightbox" id="img4"><a href="#" class="close-btn">×</a><img src="img4.jpg" alt=""></div>
+      <div class="lightbox" id="img5"><a href="#" class="close-btn">×</a><img src="img5.jpg" alt=""></div>
+      <div class="lightbox" id="img6"><a href="#" class="close-btn">×</a><img src="img6.jpg" alt=""></div>
+    </section>
+  </section>
+
+  <div class="we-accept">
+    <h3>We Accept</h3>
+    <p>Visa · MasterCard · Touch 'n Go · GrabPay · FPX · Online Banking</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contacts</a>
+      <a href="#">Visitor Information</a>
+      <a href="#">FAQ</a>
+    </div>
+    <p>© Copyright 2025</p>
+  </footer>
+
+</body>
+</html>

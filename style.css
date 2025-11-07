@@ -1,0 +1,1025 @@
+/* Font setup */
+body {
+    margin: 0;
+    background: #f5f5f5;
+    font-family: 'Courier Prime', monospace;
+    color: #090808;
+    padding: 70px 0 0 0; /* to offset fixed header */
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Edge */
+    user-select: none;         /* Standard */
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f0f0;
+    padding: 10px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 1;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header h1 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #090808;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: right;
+}
+
+/* Tickets Section */
+.tickets {
+    text-align: left;
+    padding: 40px 60px;
+}
+
+.tickets h2 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-weight: lighter;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.tickets .pricing {
+    font-weight: 600;
+    font-family: 'Courier Prime', monospace;
+    margin-bottom: 10px;
+}
+
+.tickets .note {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 150px;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Ticket Boxes */
+.ticket-box {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 40px;
+    color: white;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.ticket-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.ticket-box h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 40px; 
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.ticket-box h4 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 32px;    
+    margin: 8px 0 8px 5px;
+    font-weight: lighter;
+}
+
+.ticket-box .info,
+.ticket-box .small {
+    text-align: left;
+}
+
+.ticket-box .info {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.ticket-box .small {
+    font-size: 0.7rem;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+/* Buy Now Label */
+.buy-btn {
+    display: inline-block;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 29px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 3px 0;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    background: transparent;
+    text-align: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Wavy fill effect */
+.buy-btn::before,
+.buy-btn::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 40%;
+    transition: top 1s ease;
+    transform: translateX(-25%);
+    animation: waveMove 4s linear infinite;
+    z-index: -1;
+}
+
+.buy-btn::after {
+    background: rgba(255, 255, 255, 0.5);
+    animation-delay: -2s;
+}
+
+/* Hover effects */
+.buy-btn:hover::before,
+.buy-btn:hover::after {
+    top: 0%;
+}
+
+.buy-btn:hover {
+    color: #000000;
+}
+
+.buy-btn:active {
+    transform: scale(1.1);
+}
+
+/* Wave animation */
+@keyframes waveMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Inner white box */
+.features {
+    background: #ffffff;
+    color: #090808;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 18px;
+    box-shadow: inset 0px 2px 6px rgba(0,0,0,0.3);
+    border: #000000 1px solid;
+    transition: transform 0.4s ease;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 0.85rem;
+    line-height: 1.6rem;
+}
+
+.features:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.ticket-box:hover:has(.features:hover) {
+    transform: scale(1);
+}
+
+/* Color themes */
+.admission {
+    background-color: rgba(0,128,128,0.71);
+}
+.platinum {
+    background-color: rgba(65,102,245,0.71);
+}
+.exclusive {
+    background-color: rgba(9,8,8,0.71);
+}
+
+/* Button Colors */
+.admission-btn {
+    background-color: #008080;
+}
+.platinum-btn {
+    background-color: #4166F5;
+}
+.exclusive-btn {
+    background-color: #090808;
+}
+
+/* Footer */
+footer {
+    background: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Courier Prime', monospace;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Highlight Tag */
+.highlight {
+    width: 127px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-family: 'Dela Gothic One', sans-serif;
+    border: #000000 1px solid;
+}
+
+/* Extra Sections */
+.extra-section {
+    padding: 10px 80px;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+}
+
+.info-link {
+    margin-bottom: 40px;
+}
+
+.info-link a {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #090808;
+    border: 2px solid #090808;
+    border-radius: 25px;
+    padding: 10px 25px;
+    transition: 0.3s ease;
+}
+
+.info-link a:hover {
+    background: #090808;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Reviews Section */
+.reviews h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.reviews blockquote {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    line-height: 1.8;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px 30px;
+    margin: 20px auto;
+    max-width: 750px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reviews blockquote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Best Time Section */
+.best-time {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 30px 50px;
+    margin: 30px auto;
+    width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* We Accept Section */
+.we-accept {
+    text-align: center;
+    margin-top: -50px;
+    font-family: 'Courier Prime', monospace;
+}
+
+.we-accept h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.we-accept p {
+    font-size: 1rem;
+    color: #090808;
+    letter-spacing: 1px;
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px 60px;
+    background: #fafafa;
+    box-sizing: border-box;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.4s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    text-decoration: none;
+    font-size: 48px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 10000;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff5555;
+    transform: scale(1.1);
+}
+
+.lightbox:target ~ .header {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+/* Hide checkbox */
+.modal-toggle {
+  display: none;
+}
+
+/* Modal overlay - full page */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6); /* dimmed background */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10000;
+}
+
+/* Show modal when checkbox is checked */
+.modal-toggle:checked + .modal {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal content - 16:9 box */
+.modal-content {
+  width: 70vw;          
+  aspect-ratio: 16 / 9; 
+  background: #fff;
+  border-radius: 25px;
+  padding: 20px 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  color: #ff5555;
+  transform: scale(1.1);
+}
+/* Modal overlay - full page */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6); /* dimmed background */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10000;
+
+
+}
+
+/* Modal content - 16:9 box */
+.modal-content {
+  width: 70vw;          /* 70% of viewport width */
+  aspect-ratio: 16 / 9; /* maintains 16:9 ratio */
+  max-height: 90vh;     /* never exceed viewport height */
+  background: #fff;
+  border-radius: 25px;
+  padding: 20px 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+  overflow-x: hidden;
+}
+.buy-head {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* ------------------- Success Modal ------------------- */
+.modal-success {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 11000;
+}
+
+#success-toggle:checked ~ .modal-success {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-success-content {
+  background: #fff;
+  border-radius: 25px;
+  padding: 40px 60px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: popIn 0.4s ease;
+}
+
+.modal-success .tick {
+  font-size: 80px;
+  color: green;
+  animation: popTick 0.5s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes popTick {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+/* Pass Purchase Form Layout */
+.pass-form-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.pass-left, .pass-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pass-left h4, .pass-right h4 {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Form Inputs */
+.pass-left form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.pass-left label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.pass-left input {
+  width: 90%;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.dob-group, .expiry-group, .cvc-group {
+  display: flex;
+  gap: 5px;
+}
+
+
+
+
+/* Right Image */
+.pass-right img {
+  width: 100%;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 00px;
+  border-bottom-right-radius: 200px;
+  border-bottom-left-radius: 0px;
+  object-fit: cover;
+  margin-top: 10px;
+}
+.close-modal {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;        /* circular */
+  background-color: #ff5f57; /* Apple red */
+  cursor: pointer;
+  position: absolute;         /* position relative to modal */
+  top: 10px;
+  right: 10px;               /* move to right side */
+  text-indent: -9999px;       /* hide × text */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.close-modal:hover {
+  transform: scale(1.2);      
+}
+.confirm {
+    display: block;             
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    padding-top: 5px;              
+    max-width: 600px;          
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.5rem;          
+    color: #ffffff;
+    border: 2px solid #06a001;
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    background: #06a001;
+    text-align: center;
+    transition: transform 0.2s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;     /* include padding & border in width */
+}
+
+
+/* Wavy fill effect */
+.confirm::before,
+.confirm::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.61);
+    border-radius: 40%;
+    transition: top 1s ease;
+    transform: translateX(-25%);
+    animation: waveMove 4s linear infinite;
+    z-index: -1;
+}
+
+.confirm::after {
+    background: rgb(255, 255, 255);
+    animation-delay: -2s;
+}
+
+/* Hover effects */
+.confirm:hover::before,
+.confirm:hover::after {
+    top: 0%;
+}
+
+.confirm:hover {
+    color: #000000;
+}
+
+.confirm:active {
+    transform: scale(1.1);
+}
+
+/* Wave animation */
+@keyframes waveMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Payment Row Styling */
+.payment-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    margin: 15px 0;
+}
+
+.payment-row .expiry-group,
+.payment-row .cvc-group {
+    flex: 1;
+}
+
+.payment-row label {
+    display: block;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+.payment-row input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.cvc-group input {
+    width: 20%;
+}
+
+/* Inline row for DOB and Phone */
+.inline-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.inline-row .dob-group,
+.inline-row .phone-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inline-row label {
+    white-space: nowrap;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+    .inline-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .inline-row .dob-group,
+    .inline-row .phone-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .cvc-group input {
+        width: 100%;
+    }
+}
+.phone-group input {
+    width: 120%;
+}
+
+/* Payment method radio buttons with logos */
+.payment-methods {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 8px 0 12px 0;
+}
+
+.payment-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.payment-option img {
+    height: 26px;
+    width: auto;
+    display: block;
+}
+
+/* Highlight selected option */
+.payment-option input[type="radio"]:checked + img,
+.payment-option input[type="radio"]:focus + img {
+    outline: 2px solid #06a001;
+    border-radius: 4px;
+}
+
+/* Make clicking the logo select the radio (label wraps input+img) */
+.payment-option input[type="radio"] {
+    cursor: pointer;
+}
+
+/* =============== RESPONSIVE DESIGN =============== */
+
+/* Tablet View (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Header adjustments */
+    .header {
+        padding: 10px 20px;
+        width: 95%;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Ticket container adjustments */
+    .ticket-container {
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .ticket-box {
+        width: 250px;
+    }
+
+    .ticket-box h3 {
+        font-size: 32px;
+    }
+
+    .ticket-box h4 {
+        font-size: 26px;
+    }
+
+    /* Gallery adjustments */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 40px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 85vw;
+        padding: 15px 25px;
+    }
+
+    .pass-form-container {
+        flex-direction: column;
+    }
+
+    .pass-right img {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Mobile View (up to 767px) */
+@media screen and (max-width: 767px) {
+    /* Header adjustments */
+    .header {
+        padding: 8px 15px;
+        width: 93%;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Tickets section */
+    .tickets {
+        padding: 20px;
+    }
+
+    .ticket-container {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .ticket-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Gallery adjustments */
+    .gallery {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    /* Footer adjustments */
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 95vw;
+        padding: 10px 15px;
+        aspect-ratio: auto;
+        height: auto;
+        max-height: 90vh;
+    }
+
+    .buy-head {
+        font-size: 1.5rem;
+    }
+
+    /* Form adjustments */
+    .payment-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .payment-row input,
+    .cvc-group input {
+        width: 100%;
+    }
+
+    .payment-methods {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Reviews section */
+    .reviews blockquote {
+        padding: 15px;
+        margin: 15px 10px;
+    }
+
+    /* Best time section */
+    .best-time {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Extra section */
+    .extra-section {
+        padding: 10px 20px;
+    }
+
+    .info-link a {
+        font-size: 1.1rem;
+        padding: 8px 20px;
+    }
+}
+
+/* Small phone optimization (up to 380px) */
+@media screen and (max-width: 380px) {
+    .header h1 {
+        font-size: 1rem;
+    }
+
+    .ticket-box h3 {
+        font-size: 28px;
+    }
+
+    .ticket-box h4 {
+        font-size: 24px;
+    }
+
+    .buy-btn {
+        font-size: 24px;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+}
