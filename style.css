@@ -1,7 +1,7 @@
 /* Font setup */
 body {
     margin: 0;
-    background: #f5f5f5;
+    background: #ffffff;
     font-family: 'Courier Prime', monospace;
     color: #090808;
     padding: 70px 0 0 0; /* to offset fixed header */
@@ -378,7 +378,7 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 40px 60px;
-    background: #fafafa;
+    background: #ffffff;
     box-sizing: border-box;
 }
 
@@ -608,8 +608,6 @@ footer {
   align-items: flex-start;
 }
 
-
-
 .pass-left h4, .pass-right h4 {
   font-family: 'Dela Gothic One', sans-serif;
   font-size: 1.2rem;
@@ -620,7 +618,7 @@ footer {
 .pass-left form {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 95%;
 }
 
@@ -1024,10 +1022,4 @@ footer {
     .modal-content {
         padding: 10px;
     }
-}
-.pass-left form {
-    background-color: #d3d3d3;
-    border-radius: 50px;
-    padding-left: 35px;
-    padding-top: 19px;
 }
