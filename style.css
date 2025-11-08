@@ -49,7 +49,7 @@ body {
 /* Tickets Section */
 .tickets {
     text-align: left;
-    padding: 40px 60px;
+    padding: 45px 60px;
 }
 
 .tickets h2 {
@@ -221,7 +221,7 @@ body {
     z-index: 10;
 }
 
-.ticket-box:hover:has(.features:hover) {
+.ticket-box:hover.features:hover {
     transform: scale(1);
 }
 
@@ -687,10 +687,11 @@ footer {
     overflow: hidden;
     background: #06a001;
     text-align: center;
-    transition: transform 0.2s ease, color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     z-index: 1;
     box-sizing: border-box;     /* include padding & border in width */
+    margin: 20px auto;
 }
 
 
@@ -760,13 +761,17 @@ footer {
 }
 
 .payment-row input {
-    width: 50%;
+    width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 14px;
+}
+.expiry-group input {
+    width: 140px;
 }
 .cvc-group input {
-    width: 20%;
+    width: 80px;
 }
 
 /* Inline row for DOB and Phone */

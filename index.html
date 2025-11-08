@@ -1,15 +1,14 @@
-c<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tickets-Playland Meadows</title>
- <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Courier+Prime&family=Dela+Gothic+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
 
@@ -181,12 +180,12 @@ c<!DOCTYPE html>
 
 <div class="payment-row">
   <div class="expiry-group">
-    <label>Expiry date :</label>
-    <input type="month" placeholder="july 1970" class="expiry">
+    <label for="expiry" style="white-space: nowrap;">Expiry Date :</label>
+    <input id="expiry" type="month" placeholder="MM/YYYY" class="expiry" required>
   </div>
   <div class="cvc-group">
-    <label>cvc :</label>
-    <input type="text" placeholder="123" class="cvc" maxlength="3">
+    <label for="cvc">CVC :</label>
+    <input id="cvc" type="text" placeholder="123" class="cvc" maxlength="3" required>
   </div>
 </div>
         </form>
@@ -200,7 +199,7 @@ c<!DOCTYPE html>
     </div>
 
     <!-- Confirm Button -->
-    <label for="success-toggle" class="Confirm" style="margin-top:20px;">Confirm</label>
+    <label for="success-toggle" class="confirm" style="margin-top:20px;">Confirm</label>
   </div>
 </div>
 
@@ -270,6 +269,3 @@ c<!DOCTYPE html>
 
 </body>
 </html>
-
-
-
