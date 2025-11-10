@@ -90,13 +90,13 @@ body {
     color: white;
     box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
     position: relative;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ticket-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    transform: scale(1.4);
+    box-shadow: 0px 15px 30px rgba(0,0,0,0.5);
+    z-index: 10;
 }
 
 .ticket-box h3 {
@@ -221,9 +221,7 @@ body {
     z-index: 10;
 }
 
-.ticket-box:hover.features:hover {
-    transform: scale(1);
-}
+
 
 /* Color themes */
 .admission {
@@ -1027,4 +1025,728 @@ footer {
     .modal-content {
         padding: 10px;
     }
+}
+
+/* ==================== LOGO FLOAT ANIMATION ==================== */
+@keyframes floatLogo {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+}
+
+/* ==================== HEADER DROP ANIMATION ==================== */
+@keyframes dropLetter {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== LOADING SCREEN STYLES ==================== */
+#loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #06a001;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    color: white;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ==================== ADDITIONAL BEAUTIFUL ANIMATIONS ==================== */
+
+/* Fade in from bottom for ticket boxes */
+.ticket-container .ticket-box {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.ticket-container .ticket-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.ticket-container .ticket-box:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.ticket-container .ticket-box:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Smooth fade in for sections */
+.tickets, .best-time, .extra-section, .reviews, .gallery, .we-accept, footer {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Bounce animation for "Most Popular" badge */
+.highlight {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Slide in from left for reviews */
+.reviews blockquote {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.reviews blockquote:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.reviews blockquote:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.reviews blockquote:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Zoom in effect for gallery images */
+.gallery img {
+    animation: zoomIn 0.5s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse effect for info link */
+.info-link a {
+    animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(9, 8, 8, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px 5px rgba(9, 8, 8, 0.2);
+    }
+}
+
+/* Gradient animation for best time section */
+.best-time {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    animation: gradientShift 5s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Rotate and scale on hover for payment method logos */
+.payment-option img {
+    transition: transform 0.3s ease;
+}
+
+.payment-option:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Shake animation for empty required fields */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Ripple effect for buttons */
+.buy-btn, .confirm {
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-btn::after, .confirm::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.buy-btn:active::after, .confirm:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Smooth color transition for footer links */
+.footer-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    width: 100%;
+}
+
+/* Floating animation for menu icon */
+.menu-icon {
+    animation: floatIcon 2s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Stagger fade in for feature list items */
+.features ul li {
+    animation: fadeInRight 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.features ul li:nth-child(1) { animation-delay: 0.05s; }
+.features ul li:nth-child(2) { animation-delay: 0.1s; }
+.features ul li:nth-child(3) { animation-delay: 0.15s; }
+.features ul li:nth-child(4) { animation-delay: 0.2s; }
+.features ul li:nth-child(5) { animation-delay: 0.25s; }
+.features ul li:nth-child(6) { animation-delay: 0.3s; }
+.features ul li:nth-child(7) { animation-delay: 0.35s; }
+.features ul li:nth-child(8) { animation-delay: 0.4s; }
+.features ul li:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Smooth entrance for modal */
+.modal-content {
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Glow effect on form inputs when focused */
+.pass-left input:focus {
+    outline: none;
+    border-color: #06a001;
+    box-shadow: 0 0 10px rgba(6, 160, 1, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Breathing animation for success tick */
+.modal-success .tick {
+    animation: popTick 0.5s ease, breathe 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ==================== MORE BEAUTIFUL INTERACTIVE ANIMATIONS ==================== */
+
+/* Parallax scroll effect for header */
+.header {
+    backdrop-filter: blur(10px);
+    background: rgba(237, 237, 237, 0.95);
+}
+
+/* Animated gradient background for body */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(0,128,128,0.03) 0%, 
+        rgba(65,102,245,0.03) 50%, 
+        rgba(9,8,8,0.03) 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Ticket section title animation */
+.tickets h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.tickets h2::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    animation: underlineGrow 2s ease-in-out forwards;
+}
+
+@keyframes underlineGrow {
+    to { width: 100%; }
+}
+
+/* Interactive hover effect for pricing text */
+.tickets .pricing {
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tickets .pricing:hover {
+    transform: translateX(10px);
+    color: #4166F5;
+}
+
+/* Floating animation for note text */
+.tickets .note {
+    animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+
+/* Checkmark animation on hover */
+.features ul li {
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.features ul li:hover {
+    transform: translateX(5px);
+    color: #06a001;
+    font-weight: bold;
+}
+/* Pulsing glow for "Most Popular" badge */
+.highlight {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    animation: bounce 2s ease-in-out infinite, pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.4);
+    }
+}
+
+/* Wave effect on hr line */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #090808, 
+        transparent);
+    animation: waveHr 3s ease-in-out infinite;
+}
+
+@keyframes waveHr {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.95); }
+}
+
+/* Interactive gallery with tilt effect */
+.gallery a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery a:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Typewriter effect for reviews heading */
+.reviews h2 {
+    overflow: hidden;
+    border-right: 3px solid #090808;
+    white-space: nowrap;
+    animation: typing 3s steps(20) 1s forwards, blink 0.75s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Bounce in effect for blockquotes */
+.reviews blockquote {
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glowing border animation for best-time section */
+.best-time {
+    position: relative;
+    overflow: hidden;
+}
+
+.best-time::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #008080, #4166F5, #090808, #008080);
+    background-size: 300% 300%;
+    border-radius: 25px;
+    z-index: -1;
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Magnetic effect for info link */
+.info-link a {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.info-link a:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+/* Sparkle effect on we-accept section */
+.we-accept h3 {
+    position: relative;
+    display: inline-block;
+}
+
+.we-accept h3::before,
+.we-accept h3::after {
+    content: '✨';
+    position: absolute;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.we-accept h3::before {
+    left: -30px;
+}
+
+.we-accept h3::after {
+    right: -30px;
+    animation-delay: 1s;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+/* Footer wave animation */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 200%;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.1) 10px,
+        rgba(255,255,255,0.1) 20px
+    );
+    animation: waveFooter 3s linear infinite;
+}
+
+@keyframes waveFooter {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Hover lift effect for footer links */
+.footer-links a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 3px 5px rgba(255,255,255,0.3);
+}
+
+/* Modal entrance with bounce */
+.modal-content {
+    animation: modalBounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes modalBounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Form input focus animation */
+.pass-left input {
+    transition: all 0.3s ease;
+}
+
+.pass-left input:focus {
+    transform: scale(1.02);
+    background: rgba(6, 160, 1, 0.05);
+}
+
+/* Payment method selection animation */
+.payment-option {
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(6, 160, 1, 0.1);
+}
+
+/* Confirm button pulse when ready */
+.confirm {
+    animation: readyPulse 2s ease-in-out infinite;
+}
+
+@keyframes readyPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(6, 160, 1, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(6, 160, 1, 0);
+    }
+}
+
+/* Success modal celebration effect */
+.modal-success-content {
+    animation: celebrate 0.6s ease-out;
+}
+
+@keyframes celebrate {
+    0% {
+        transform: scale(0) rotate(-180deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Confetti effect for success */
+.modal-success::before {
+    content: '🎉';
+    position: absolute;
+    font-size: 50px;
+    animation: confetti 1s ease-out infinite;
+    opacity: 0;
+}
+
+@keyframes confetti {
+    0% {
+        top: -50px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Cursor trail effect on interactive elements */
+.buy-btn, .confirm, .info-link a, .footer-links a {
+    cursor: pointer;
+    position: relative;
+}
+
+/* Card flip effect for welcome image */
+.pass-right img {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.pass-right:hover img {
+    transform: rotateY(10deg) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
